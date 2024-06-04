@@ -1,0 +1,22 @@
+<h1 class="text-center mb-3">Design Patterns</h1>
+
+<div class="row">
+  @for (category of designPatterns; track $index) {
+  <div class="col-12 col-md-4">
+    <p class="fw-bold">{{ category.name }}</p>
+
+    <hr />
+    @for (pattern of category.patterns; track $index) {
+    <div class="card mb-3">
+      <a
+        class="btn card-body"
+        [routerLink]="pattern.url"
+        routerLinkActive="active"
+      >
+        {{ pattern.name }}
+      </a>
+    </div>
+    }
+  </div>
+  }
+</div>
